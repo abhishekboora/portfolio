@@ -1,0 +1,28 @@
+@keyframes pulse-bg {
+    0% {
+      background-size: 100% 100%;
+      opacity: 1;
+    }
+    50% {
+      background-size: 120% 120%;
+      opacity: 0.9;
+    }
+    100% {
+      background-size: 100% 100%;
+      opacity: 1;
+    }
+  }
+  
+  .bg-radial-gradient {
+    background: radial-gradient(
+      circle at center,
+      #4f46e5 0%, /* indigo-600 */
+      #7e22ce 50%, /* purple-700 */
+      #1e3a8a 100% /* blue-900 */
+    );
+  }
+  
+  .animate-pulse-bg {
+    background-size: 100% 100%;
+    animation: pulse-bg 10s ease-in-out infinite;
+  }
