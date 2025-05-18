@@ -16,16 +16,16 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-800">
       <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-12 text-gray-800">Get in Touch</h2>
+        <h2 className="text-4xl font-bold mb-12 text-white">Get in Touch</h2>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-4">
           <input
             type="text"
             placeholder="Your Name"
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="w-full p-3 rounded bg-gray-200 text-gray-800"
+            className="w-full p-3 rounded bg-gray-900 text-white"
             required
           />
           <input
@@ -33,14 +33,14 @@ function Contact() {
             placeholder="Your Email"
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full p-3 rounded bg-gray-200 text-gray-800"
+            className="w-full p-3 rounded bg-gray-900 text-white"
             required
           />
           <textarea
             placeholder="Your Message"
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
-            className="w-full p-3 rounded bg-gray-200 text-gray-800"
+            className="w-full p-3 rounded bg-gray-900 text-white"
             rows="5"
             required
           ></textarea>
@@ -63,7 +63,7 @@ function Contact() {
               <FaWhatsapp className="text-2xl" />
             </a>
             <a
-              href="https://www.linkedin.com/in/abhishekboora/"
+              href="https://www.linkedin.com/in/abhishekboora1/"
               className="text-blue-700 hover:text-blue-600 transition-colors drop-shadow-sm"
               target="_blank"
               rel="noopener noreferrer"
@@ -73,7 +73,7 @@ function Contact() {
             </a>
             <a
               href="https://github.com/abhishekboora"
-              className="text-gray-900 hover:text-gray-700 transition-colors drop-shadow-sm"
+              className="text-white hover:text-gray-300 transition-colors drop-shadow-sm"
               target="_blank"
               rel="noopener noreferrer"
               title="GitHub"
@@ -81,8 +81,8 @@ function Contact() {
               <FaGithub className="text-2xl" />
             </a>
           </div>
-          <p className="mt-4 text-gray-800 flex items-center justify-center gap-2">
-            <FaMapMarkerAlt className="text-gray-800 text-xl" />
+          <p className="mt-4 text-gray-200 flex items-center justify-center gap-2">
+            <FaMapMarkerAlt className="text-gray-200 text-xl" />
             Delhi, India
           </p>
         </div>
