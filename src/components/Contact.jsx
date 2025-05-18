@@ -1,27 +1,31 @@
 import { useState } from 'react';
-import { FaEnvelope, FaWhatsapp, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaWhatsapp, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
 
 function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission (replace with actual API call)
-    alert('Form submitted!');
+    // Construct WhatsApp message
+    const whatsappMessage = `New message from ${form.name}%0AEmail: ${form.email}%0AMessage: ${form.message}`;
+    const whatsappUrl = `https://wa.me/+919306098396?text=${encodeURIComponent(whatsappMessage)}`;
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+    // Reset form
     setForm({ name: '', email: '', message: '' });
   };
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-12">Get in Touch</h2>
+        <h2 className="text-4xl font-bold mb-12 text-gray-800">Get in Touch</h2>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-4">
           <input
             type="text"
             placeholder="Your Name"
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="w-full p-3 rounded bg-gray-700 text-white"
+            className="w-full p-3 rounded bg-gray-200 text-gray-800"
             required
           />
           <input
@@ -29,14 +33,14 @@ function Contact() {
             placeholder="Your Email"
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full p-3 rounded bg-gray-700 text-white"
+            className="w-full p-3 rounded bg-gray-200 text-gray-800"
             required
           />
           <textarea
             placeholder="Your Message"
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
-            className="w-full p-3 rounded bg-gray-700 text-white"
+            className="w-full p-3 rounded bg-gray-200 text-gray-800"
             rows="5"
             required
           ></textarea>
@@ -47,44 +51,39 @@ function Contact() {
             Send Message
           </button>
         </form>
-        <div className="mt-8 space-y-4">
-          <p className="flex items-center justify-center gap-2">
-            <FaEnvelope className="text-indigo-400" />
-            Email:{' '}
+        <div className="mt-8">
+          <div className="flex justify-center gap-6">
             <a
-              href="mailto:abhishekboora2001@gmail.com"
-              className="text-indigo-400 hover:underline"
-            >
-              abhishekboora2001@gmail.com
-            </a>
-          </p>
-          <p className="flex items-center justify-center gap-2">
-            <FaWhatsapp className="text-indigo-400" />
-            WhatsApp:{' '}
-            <a
-              href="https://wa.me/9306098396"
-              className="text-indigo-400 hover:underline"
+              href="https://wa.me/+919306098396"
+              className="text-green-500 hover:text-green-400 transition-colors drop-shadow-sm"
               target="_blank"
               rel="noopener noreferrer"
+              title="WhatsApp"
             >
-              +91 9306098396
+              <FaWhatsapp className="text-2xl" />
             </a>
-          </p>
-          <p className="flex items-center justify-center gap-2">
-            <FaGithub className="text-indigo-400" />
-            GitHub:{' '}
+            <a
+              href="https://www.linkedin.com/in/abhishekboora/"
+              className="text-blue-700 hover:text-blue-600 transition-colors drop-shadow-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+            >
+              <FaLinkedin className="text-2xl" />
+            </a>
             <a
               href="https://github.com/abhishekboora"
-              className="text-indigo-400 hover:underline"
+              className="text-gray-900 hover:text-gray-700 transition-colors drop-shadow-sm"
               target="_blank"
               rel="noopener noreferrer"
+              title="GitHub"
             >
-              github.com/abhishekboora
+              <FaGithub className="text-2xl" />
             </a>
-          </p>
-          <p className="flex items-center justify-center gap-2">
-            <FaMapMarkerAlt className="text-indigo-400" />
-            Address: Delhi, India
+          </div>
+          <p className="mt-4 text-gray-800 flex items-center justify-center gap-2">
+            <FaMapMarkerAlt className="text-gray-800 text-xl" />
+            Delhi, India
           </p>
         </div>
       </div>
